@@ -1,3 +1,4 @@
+import 'package:booking/Screens/AboutScreen.dart';
 import 'package:flutter/material.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-            padding: EdgeInsets.only(top: 40, left: 30, right: 30),
+          padding: EdgeInsets.only(top: 40, left: 30, right: 30),
           child: ListView(
             children: [
               Text(
@@ -73,7 +74,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     flex: 1,
                     fit: FlexFit.tight,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 22),
                       clipBehavior: Clip.antiAlias,
                       decoration: ShapeDecoration(
                         shape: RoundedRectangleBorder(
@@ -100,7 +102,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     flex: 1,
                     fit: FlexFit.tight,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 22),
                       clipBehavior: Clip.antiAlias,
                       decoration: ShapeDecoration(
                         shape: RoundedRectangleBorder(
@@ -133,7 +136,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     flex: 1,
                     fit: FlexFit.tight,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 22),
                       clipBehavior: Clip.antiAlias,
                       decoration: ShapeDecoration(
                         shape: RoundedRectangleBorder(
@@ -160,7 +164,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     flex: 1,
                     fit: FlexFit.tight,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 22),
                       clipBehavior: Clip.antiAlias,
                       decoration: ShapeDecoration(
                         shape: RoundedRectangleBorder(
@@ -201,83 +206,91 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 ),
               ), // "Explore"
 
-              Container(
-            width: double.infinity, // Fills available horizontal space
-            height: 270, // Adjust as needed for aspect ratio
-            clipBehavior: Clip.antiAlias,
-            decoration: ShapeDecoration(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              shadows: [
-                BoxShadow(
-                  color: Color(0x3F000000),
-                  blurRadius: 3,
-                  offset: Offset(0, 2),
-                  spreadRadius: 0,
-                )
-              ],
-            ),
-            child: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Container(
-                    width: double.infinity, // Fills container width
-                    height: 190, // Adjust as needed for aspect ratio
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage("https://via.placeholder.com/372x174"),
-                        fit: BoxFit.fill,
-                      ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AboutScreen()));
+                },
+                child: Container(
+                  width: double.infinity, // Fills available horizontal space
+                  height: 270, // Adjust as needed for aspect ratio
+                  clipBehavior: Clip.antiAlias,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
                     ),
+                    shadows: [
+                      BoxShadow(
+                        color: Color(0x3F000000),
+                        blurRadius: 3,
+                        offset: Offset(0, 2),
+                        spreadRadius: 0,
+                      )
+                    ],
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, bottom: 20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Stack(
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            'VL Studios',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w600,
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Container(
+                          width: double.infinity, // Fills container width
+                          height: 190, // Adjust as needed for aspect ratio
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/372x174"),
+                              fit: BoxFit.fill,
                             ),
                           ),
-                          Spacer(),
-                          Text(
-                            'INR 450 onwards',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 14,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
-                      Text(
-                        'Koramangala',
-                        style: TextStyle(
-                          color: Color(0xFF676767),
-                          fontSize: 12,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 16, right: 16, bottom: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'VL Studios',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                Spacer(),
+                                Text(
+                                  'INR 450 onwards',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Text(
+                              'Koramangala',
+                              style: TextStyle(
+                                color: Color(0xFF676767),
+                                fontSize: 12,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
                 ),
-              ],
-            ),
-          ), // VL Studio Card
+              ), // VL Studio Card
             ],
           ),
         ),
