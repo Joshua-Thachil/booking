@@ -1,3 +1,4 @@
+import 'package:booking/Screens/BookScreen.dart';
 import 'package:flutter/material.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -423,7 +424,9 @@ class AboutScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => BookScreen()));
+                        },
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 65),
                           clipBehavior: Clip.antiAlias,
